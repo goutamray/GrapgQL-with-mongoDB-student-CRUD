@@ -5,7 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
   "dependencies": {
     "@apollo/server": "^4.10.2",
     "colors": "^1.4.0",
+    "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
     "graphql": "^16.8.1",
     "mongoose": "^8.2.3",
