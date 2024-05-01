@@ -5,6 +5,7 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { typeDefs } from "./graphql/typeDefs.js";
 import { resolvers } from "./graphql/resolvers.js";
 import mongoDBConnection from "./config/mongoDB.js";
+import { testmiddleware } from "./middleware/TestMiddleware.js";
 
 // env config
 dotenv.config();
@@ -16,8 +17,16 @@ const PORT= process.env.PORT || 9090;
 // init apollo server 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
-});
+  resolvers,
+  plugins : [
+    {
+       async requestDidStart(requestContext){
+         await testmiddleware(requestContext); 
+      },
+    },
+  ], 
+
+}); 
 
 
 // listen server 

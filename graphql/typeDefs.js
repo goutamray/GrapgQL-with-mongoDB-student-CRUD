@@ -5,11 +5,12 @@
   type Student{
     id: ID
     name: String!
-    age: Int!
     email: String!
-    phone: String!
-    location: String!
-    gender: String!
+    password: String!
+    age: Int
+    phone: String
+    location: String
+    gender: String
     status: Boolean
     trash: Boolean
     createdAt: String
@@ -28,6 +29,11 @@
     deleteStudent(id:ID!) : Student
 
     updateStudent(id:ID!, name: String!, age: Int!, email: String!, phone: String!, location: String!, gender: String!) : Student
+
+
+    registerStudent(name: String!, email: String!, password: String!) : Student 
+
+    loginStudent(email: String!, password: String!): Student
   }
   
  `

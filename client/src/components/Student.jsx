@@ -1,5 +1,5 @@
 
-import { gql, useMutation, useQuery } from "@apollo/client"
+import { useMutation, useQuery } from "@apollo/client"
 import { useState } from "react";
 import { GET_ALL_STUDENTS } from "../graphql/query";
 import { CREATE_STUDENT, DELETE_STUDENT } from "../graphql/mutation";
@@ -42,6 +42,15 @@ const Student = () => {
       ...input,
       age : Number(input.age)
     }
+  });
+
+  setInput({
+    name : "",
+    email : "",
+    phone : "",
+    location : "",
+    age : "",
+    gender : "",
   })
  }; 
 

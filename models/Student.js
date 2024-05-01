@@ -14,18 +14,20 @@ const studentSchema = mongoose.Schema({
      required : true,
      trim : true
   },
-  phone : {
+  password : {
      type : String,
      required : true,
      trim : true
   },
+  phone : {
+     type : String,
+     trim : true
+  },
   age : {
      type : Number,
-     required : true,
   },
   location : {
   type : String,
-  required : true,
   trim : true
   },
   status : {

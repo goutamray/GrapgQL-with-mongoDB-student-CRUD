@@ -1,6 +1,6 @@
 
-
-import Student from './components/Student';
+import { RouterProvider } from 'react-router-dom';
+import router from './router/router';
 import './App.css'; 
 
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Student />     
+         <RouterProvider router={router}/>
     </>
   )
 }
